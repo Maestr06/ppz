@@ -38,9 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'home.apps.HomeConfig',
+    'store',
+    'tags',
     'debug_toolbar',
-    ''
 ]
 
 MIDDLEWARE = [
@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'DjangoApp.urls'
@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'DjangoApp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mysql',
+        'NAME': 'store',
         'HOST': 'lin-1790-1880-mysql-primary.servers.linodedb.net',
         'USER': 'linroot',
         'PASSWORD': 'lX.y9f06lwVbrZF0',
