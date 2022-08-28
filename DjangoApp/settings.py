@@ -81,18 +81,11 @@ WSGI_APPLICATION = 'DjangoApp.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'store',
-        'HOST': 'lin-1790-1880-mysql-primary.servers.linodedb.net',
-        'USER': 'linroot',
-        'PASSWORD': 'lX.y9f06lwVbrZF0',
-        'PORT': '3306',
-        'OPTIONS': {
-            'ssl': 'required',
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-}
 
 
 # Password validation
