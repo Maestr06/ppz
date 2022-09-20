@@ -11,7 +11,7 @@ class CollectionSerializer(serializers.ModelSerializer):
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
-        fields = ['id', 'title', 'unit_price', 'description', 'collection']
+        fields = ['id', 'title', 'price', 'description', 'collection', 'img_url']
 
     collection = serializers.HyperlinkedRelatedField(
         queryset=Collection.objects.all(),

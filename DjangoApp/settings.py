@@ -44,9 +44,11 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'crispy_forms',
     'crispy_bootstrap5',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -56,6 +58,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
+
+ALLOWED_HOSTS = ['*']
+
+CORS_ALLOW_HEADERS = ['*']
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'DjangoApp.urls'
 

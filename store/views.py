@@ -1,7 +1,9 @@
+from multiprocessing import context
 from django.shortcuts import get_object_or_404
 from django.db.models.aggregates import Count
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from rest_framework.request import Request
 from rest_framework import status
 from .models import Collection, Product
 from .serializers import ProductSerializer, CollectionSerializer
@@ -26,7 +28,8 @@ def product_list(request):
 def product_detail(request, pk):
     product = get_object_or_404(Product, pk=pk)
     if request.method == 'GET':
-        serializer = ProductSerializer(product)
+        context = {'request': request}
+        serializer = ProductSerializer(product, context=context)
         return Response(serializer.data)
     elif request.method == 'PUT':
         serializer = ProductSerializer(product, data=request.data)
