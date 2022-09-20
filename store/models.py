@@ -25,7 +25,7 @@ class Product(models.Model):
     description = models.TextField(null=True, blank=True)
     img_url = models.URLField(max_length=200, default='https://auto-club.hyundai.pl/fileadmin/_processed_/d/3/csm_i30_hb_nline_dummy_02_5x4_ef82ba5a5c.png')
     price = models.DecimalField(
-        max_digits=6,
+        max_digits=10,
         decimal_places=2,
         validators=[MinValueValidator(1)])
     inventory = models.IntegerField(validators=[MinValueValidator(0)])
